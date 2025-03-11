@@ -29,11 +29,11 @@ func NewRouters(r *Routers, token string) *fiber.App {
 	apiGroup := app.Group("/v1", middleware.Authorization(token))
 
 	// CRUD для задач
-	apiGroup.Post("/tasks", r.Service.CreateTask)       // ✅ Создать задачу
-	apiGroup.Get("/tasks", r.Service.GetTasks)          // ✅ Получить список задач
-	apiGroup.Get("/tasks/:id", r.Service.GetTaskByID)   // ✅ Получить задачу по ID
-	apiGroup.Put("/tasks/:id", r.Service.UpdateTask)    // ✅ Обновить задачу
-	apiGroup.Delete("/tasks/:id", r.Service.DeleteTask) // ✅ Удалить задачу
+	apiGroup.Post("/tasks", r.Service.CreateTask)
+	apiGroup.Get("/tasks", r.Service.GetTasks)
+	apiGroup.Get("/tasks/:id", r.Service.GetTaskByID)
+	apiGroup.Put("/tasks/:id", r.Service.UpdateTask)
+	apiGroup.Delete("/tasks/:id", r.Service.DeleteTask)
 
 	return app
 }
